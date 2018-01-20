@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>任务二：零基础HTML及CSS编码（一）</title>
-  <link rel="stylesheet" href="css/ww-02.css">
+  <title>任务五：零基础HTML及CSS编码（二）</title>
+  <link rel="stylesheet" href="css/ww-05.css">
 </head>
 <body>
 <header>
@@ -15,7 +15,7 @@
     <li><a href="">导航链接四</a></li>
   </ul>
 </header>
-<div>
+<div class="main_1">
   <h2>文章一级标题</h2>
   <h3>文章二级标题</h3>
   <h5>文章作者 文章发表时间</h5>
@@ -35,11 +35,68 @@
     这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
   </p>
 </div>
+<div class="main_5">
+  <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
+  <form action="">
+    <table>
+      <tr>
+        <td>请输入邮箱地址：</td>
+        <td><input type="email" id="email" placeholder="这是一个文本输入框"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><p>邮箱地址请按照要求格式输入</p></td>
+      </tr>
+      <tr>
+        <td>请输入密码：</td>
+        <td><input type="password" id="pass" placeholder="这是一个文本输入框"></td>
+      </tr>
+      <tr>
+        <td>请重复输入密码：</td>
+        <td><input type="password" id="psd" placeholder="这是一个文本输入框"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><p>密码请为6-16位英文字母</p></td>
+      </tr>
+      <tr>
+        <td>性别：</td>
+        <td><input type="radio" name="sex" value="male">男<input type="radio" name="sex" value="female">女</td>
+      </tr>
+      <tr>
+        <td>城市：</td>
+        <td>
+          <label for="">
+            <select name="" id="">
+              <option value="">北京</option>
+              <option value="">上海</option>
+              <option value="">广州</option>
+              <option value="">深圳</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>爱好：</td>
+        <td>
+          <input type="checkbox">运动
+          <input type="checkbox">艺术
+          <input type="checkbox">科学
+        </td>
+      </tr>
+      <tr>
+        <td>个人描述：</td>
+        <td><textarea name="" cols="30" rows="3" placeholder="这是一个多行输入框，输入您的个人描述"></textarea></td>
+      </tr>
+    </table>
+    <label for="submit"><input type="submit" id="submit"></label>
+  </form>
+</div>
 <div class="main_2">
   <h2>另一篇文章一级标题</h2>
   <h3>文章二级标题</h3>
   <h5>文章作者 文章发表时间</h5>
-    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+  <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
     这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落，
     <strong>这里有一个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落， <a href="">这里有一个连接，点击后打开新窗口连接到
       http://ife.baidu.com</a> 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
@@ -98,112 +155,57 @@
 
 </div>
 <div class="main_4">
-<h2>最后一篇文章一级标题</h2>
-<h3>文章二级标题</h3>
-<h5>文章作者 文章发表时间</h5>
-<ol>
-  <li>排名1</li>
-  <li>排名2</li>
-  <li>排名3</li>
-</ol>
-<table border="0" cellspacing="1" cellpadding="0">
-  <caption>下面是一个表格，我这里给表格加了一个border="1",好让你们看出这是一个表格,你们不用写HTML时不要加</caption>
-  <thead>
-  <tr>
-    <td>表头</td>
-    <td>表头</td>
-    <td>表头</td>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>表内单元格</td>
-    <td>表内单元格</td>
-    <td><a href="">操作</a></td>
-  </tr>
-  <tr>
-    <td>表内单元格</td>
-    <td>表内单元格</td>
-    <td><a href="">操作</a></td>
-  </tr>
-  <tr>
-    <td>表内单元格</td>
-    <td>表内单元格</td>
-    <td><a href="">操作</a></td>
-  </tr>
-  <tr>
-    <td>表内单元格</td>
-    <td>表内单元格</td>
-    <td><a href="">操作</a></td>
-  </tr>
-  </tbody>
-  <tfoot>
-  <tr>
-    <td>总计</td>
-    <td colspan="2">100</td>
-  </tr>
-  </tfoot>
+  <h2>最后一篇文章一级标题</h2>
+  <h3>文章二级标题</h3>
+  <h5>文章作者 文章发表时间</h5>
+  <ol>
+    <li>排名1</li>
+    <li>排名2</li>
+    <li>排名3</li>
+  </ol>
+  <table border="0" cellspacing="1" cellpadding="0">
+    <caption>下面是一个表格，我这里给表格加了一个border="1",好让你们看出这是一个表格,你们不用写HTML时不要加</caption>
+    <thead>
+    <tr>
+      <td>表头</td>
+      <td>表头</td>
+      <td>表头</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>表内单元格</td>
+      <td>表内单元格</td>
+      <td><a href="">操作</a></td>
+    </tr>
+    <tr>
+      <td>表内单元格</td>
+      <td>表内单元格</td>
+      <td><a href="">操作</a></td>
+    </tr>
+    <tr>
+      <td>表内单元格</td>
+      <td>表内单元格</td>
+      <td><a href="">操作</a></td>
+    </tr>
+    <tr>
+      <td>表内单元格</td>
+      <td>表内单元格</td>
+      <td><a href="">操作</a></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td>总计</td>
+      <td colspan="2">100</td>
+    </tr>
+    </tfoot>
 
-</table>
+  </table>
 </div>
-<div class="main_5">
-  <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
-  <form action="">
-    <table>
-      <tr>
-        <td>请输入邮箱地址：</td>
-        <td><input type="email" id="email" placeholder="这是一个文本输入框"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><p>邮箱地址请按照要求格式输入</p></td>
-      </tr>
-      <tr>
-        <td>请输入密码：</td>
-        <td><input type="password" id="pass" placeholder="这是一个文本输入框"></td>
-      </tr>
-      <tr>
-        <td>请重复输入密码：</td>
-        <td><input type="password" id="psd" placeholder="这是一个文本输入框"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><p>密码请为6-16位英文字母</p></td>
-      </tr>
-      <tr>
-        <td>性别：</td>
-        <td><input type="radio" name="sex" value="male">男<input type="radio" name="sex" value="female">女</td>
-      </tr>
-      <tr>
-        <td>城市：</td>
-        <td>
-          <label for="">
-          <select name="" id="">
-          <option value="">北京</option>
-          <option value="">上海</option>
-          <option value="">广州</option>
-          <option value="">深圳</option>
-          </select>
-          </label>
-        </td>
-      </tr>
-      <tr>
-        <td>爱好：</td>
-        <td>
-          <input type="checkbox">运动
-          <input type="checkbox">艺术
-          <input type="checkbox">科学
-        </td>
-      </tr>
-      <tr>
-        <td>个人描述：</td>
-        <td><textarea name="" cols="30" rows="3" placeholder="这是一个多行输入框，输入您的个人描述"></textarea></td>
-      </tr>
-    </table>
-    <label for="submit"><input type="submit" id="submit"></label>
-  </form>
-</div>
+
 
 <footer><p>版权所有&copy;</p></footer>
 </body>
 </html>
+

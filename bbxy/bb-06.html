@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务六：基础JavaScript练习（三）</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #main{
+      display: flex;
+      margin: 10px;
+      /*justify-content: flex-start;*/
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    #main div{
+      background-color: #fb0101;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+    }
+    #main ul{
+      display: flex;
+
+    }
+    #main ul li{
+      list-style: none;
+      background-color: red;
+      color: white;
+      padding: 8px;
+      margin: 4px;
+    }
+
+  </style>
+  <script>
+    window.onload = function() {
+      var text = document.getElementById("text");
+      var main = document.getElementById('main');
+      var left_in = document.getElementById("left_in");
+      var right_in = document.getElementById("right_in");
+      var left_out = document.getElementById("left_out");
+      var right_out = document.getElementById("right_out");
+      var search = document.getElementById("search");
+      var txt = document.getElementById("txt");
+
+//除去数组中的空格
+      function match_o(arr){
+        var arr1=[];
+        for(let i = 0,len= arr.length;i<len;++i){
+          if(arr[i]!=""){
+            arr1.push(arr[i]);
+          }
+        }
+        return arr1;
+      }
+
+      function match(text){
+        var lq = text.value;
+//        按不同符号分割字符串
+        var reg = /[,_><，]|\s/;
+        var arr1 = lq.split(reg);
+        arr1 = match_o(arr1);
+        alert(arr1);
+        var ul = document.createElement("ul");
+        for(let i =0;i<arr1.length;++i){
+          var li = document.createElement("li");
+          li.innerText = arr1[i];
+          ul.appendChild(li);
+        }
+        return ul
+      }
+
+      function lr_in(a) {
+       var div = match(text);
+        if (a == "left_in") {
+          main.insertBefore(div, main.firstChild);
+        }
+        else if (a == "right_in") {
+          main.appendChild(div);
+        }
+      }
+
+      function lr_out(a) {
+        if (a == "left_out" && main.childNodes.length > 0) {
+          alert(main.firstChild.innerText);
+          main.removeChild(main.firstChild);
+        }
+        else if (a == "right_out" && main.childNodes.length > 0) {
+          alert(main.lastChild.innerText);
+          main.removeChild(main.lastChild);
+        }
+        else {
+          alert("队列为空");
+        }
+      }
+//    搜索匹配的字符串
+      function search_txt(main,txt){
+        var str = /txt.value/g;
+        var ul = main.children;
+        for(let i= 0;i<ul.length;++i){
+          for(let j=0;j<ul[i].length;++j){
+            if(str.test(ul[i].children[j].innerHTML)){
+              ul[i].children[j].style.backgroundColor = "green";
+            }
+          }
+        }
+      }
+
+      left_in.addEventListener("click", function () {
+        // 错在一直用的是left_in，没加引号
+        lr_in("left_in");
+      });
+      right_in.addEventListener("click", function () {
+        lr_in("right_in");
+      });
+      left_out.addEventListener("click", function () {
+        lr_out("left_out");
+      });
+      right_out.addEventListener("click", function () {
+        lr_out("right_out");
+      });
+
+//     事件委托
+      main.addEventListener("click", function (event) {
+//        不加toLocaleLowerCase()则显示的是大写的DIV
+        if(event.target.nodeName.toLocaleLowerCase() =="li"){
+          alert(event.target.innerHTML);
+//        用event.target.parentNode找到当前节点的父节点
+          event.target.parentNode.removeChild(event.target);
+        }
+      });
+
+//      搜索事件
+      search.addEventListener("click", function(){
+        search_txt(main,txt);
+      })
+
+    }
+
+  </script>
+</head>
+<body>
+<label for="text"><textarea name="" id="text" cols="30" rows="10"></textarea></label>
+<button id="left_in">左侧入</button>
+<button id="right_in">右侧入</button>
+<button id="left_out">左侧出</button>
+<button id="right_out">右侧出</button>
+
+<label for="txt"><input type="text" id="txt"></label>
+<button id="search">搜索</button>
+<div id="main">
+
+</div>
+
+</body>
+</html>

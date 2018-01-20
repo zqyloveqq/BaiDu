@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务一：表单（一）单个表单项的检验</title>
+  <style>
+    form{
+      margin: 100px auto;
+      text-align: center;
+    }
+    form button{
+      border: none;
+      width: 60px;
+      background-color: #2f79b9;
+      border-radius: 4px;
+      padding: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    form #text{
+      border: 1px solid #adadad;;
+      border-radius: 5px;
+      width: 200px;
+      height: 32px;
+    }
+    form label{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    form p{
+      color: #adadad;
+      /*position: relative;*/
+      /*padding: 0;*/
+      /*margin: 0*/
+    }
+  </style>
+  <script>
+    window.onload = function(){
+
+      var text = document.getElementById("text");
+      var btn = document.getElementById("btn");
+      var p = document.getElementById("p");
+//  计算字符个数
+      function match_ec(str){
+        var num = 0;
+        for(let i= 0,len = str.length;i<len;++i){
+          if(str.charCodeAt(i)>128){
+            num+=2;
+          }
+          else {
+            num+=1;
+          }
+        }
+        return num;
+      }
+
+      function  checkout_num(text){
+        var str = text.value;
+        var num = match_ec(str);
+        if(num >=4 && num<=16){
+          return true;
+        }
+        else return false;
+      }
+
+
+      btn.addEventListener("click",function(e){
+        e.preventDefault();
+        var b = checkout_num(text);
+        if( b ){
+          text.style.borderColor = "green";
+          p.innerHTML = "名称格式正确";
+          p.style.color = "green";
+        }
+        else {
+          text.style.borderColor = "red";
+          p.innerHTML = "名称格式错误";
+          p.style.color = "red";
+        }
+      },false)
+
+    }
+
+  </script>
+</head>
+<body>
+<form action="" name="form">
+  <label for="text">名称&nbsp;&nbsp;&nbsp;<input type="text" id="text" name="mao">&nbsp;</label>
+  <!--button造成样式无法改变,阻止默认事件a.addEventListener("click",function(e){e.preventDefault()},false);-->
+  <button id="btn">验证</button>
+  <p id="p">必填，长度是4~16个字符</p>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务四：基础JavaScript练习（一）</title>
+  <style>
+    #main{
+      display: flex;
+      margin: 10px;
+      /*justify-content: flex-start;*/
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    #main div{
+      background-color: #fb0101;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var text = document.getElementById("text");
+      var main = document.getElementById('main');
+      var left_in = document.getElementById("left_in");
+      var right_in = document.getElementById("right_in");
+      var left_out = document.getElementById("left_out");
+      var right_out = document.getElementById("right_out");
+
+      function lr_in(a) {
+        var div = document.createElement("div");
+        if (isNaN(text.value) || text.value == "") {
+          alert("值不合法");
+          return 0;
+        }
+        div.innerText = text.value;
+        if (a == "left_in") {
+          main.insertBefore(div, main.firstChild);
+        }
+        else if (a == "right_in") {
+          main.appendChild(div);
+        }
+      }
+
+      function lr_out(a) {
+        if (a == "left_out" && main.childNodes.length > 0) {
+          alert(main.firstChild.innerText);
+          main.removeChild(main.firstChild);
+        }
+        else if (a == "right_out" && main.childNodes.length > 0) {
+          alert(main.lastChild.innerText);
+          main.removeChild(main.lastChild);
+        }
+        else {
+          alert("队列为空");
+        }
+      }
+
+
+      left_in.addEventListener("click", function () {
+        // 错在一直用的是left_in，没加引号
+        lr_in("left_in");
+      });
+      right_in.addEventListener("click", function () {
+        lr_in("right_in");
+      });
+      left_out.addEventListener("click", function () {
+        lr_out("left_out");
+      });
+      right_out.addEventListener("click", function () {
+        lr_out("right_out");
+      });
+
+//     事件委托
+      main.addEventListener("click", function (event) {
+//        不加toLocaleLowerCase()则显示的是大写的DIV
+        if(event.target.nodeName.toLocaleLowerCase() =="div"){
+          alert("移出"+event.target.innerHTML);
+          main.removeChild(event.target);
+        }
+      });
+
+
+    }
+
+  </script>
+</head>
+<body>
+<label for="text"><input type="text" id="text"></label>
+<button id="left_in">左侧入</button>
+<button id="right_in">右侧入</button>
+<button id="left_out">左侧出</button>
+<button id="right_out">右侧出</button>
+<div id="main">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  font-family: "微软雅黑";
+  font-size: 14px;
+  height: 58px;
+  line-height: 58px;
+  padding: 0 59px;
+}
+header div{
+  line-height: 58px;
+  display: inline-block;
+  text-align: center;
+}
+header div:nth-of-type(1) p{
+  margin-top: 13px;
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  background: #fff url(../images/ww-07-sprint.png) -8px -7px no-repeat;
+}
+header div:nth-of-type(1) span{
+  font-size: 21px;
+  font-family:"黑体";
+  position: relative;
+  left: 4px;
+  top: -8px;
+}
+header ul{
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 160px;
+}
+header ul li{
+  list-style: none;
+  margin-left: 30px;
+}
+a{
+  text-decoration: none;
+  color: #787282;
+}
+header div:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  right: 58px;
+}
+
+header div:nth-of-type(2) p{
+  width: 14px;
+  height: 17px;
+  background: #fff url(../images/ww-07-sprint.png) -57px -103px no-repeat;
+  margin-top: 20px;
+  margin-left: -25px;
+}
+header div:nth-of-type(2) span{
+  position: relative;
+  left: -5px;
+  top: -38px;
+  color: #E74F4D;
+}
+header div:nth-of-type(2) span a{
+  color: #E74F4D;
+}
+.active{
+  color: #E74F4D;
+
+}
+section .logo{
+  font-family:"微软雅黑";
+  background: #ffffff url(../images/ww-07-logo.fw.png) 0 0 no-repeat;
+  /*opacity: 0.7;*/
+  background-size: cover;
+  color: white;
+  width: 100vm;
+  height: 850px;
+  position: relative;
+}
+section .logo div{
+  display: inline-block;
+  width: 482px;
+  height: 272px;
+  margin-left: 100px;
+  margin-top: 220px;
+}
+section .logo div span:nth-of-type(1){
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+section .logo div p{
+  font-size: 21px;
+  margin-left: 10px;
+}
+section .logo div p:nth-of-type(1){
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+section .logo div p:nth-of-type(2){
+  margin-bottom: 60px;
+}
+
+section .logo div span:last-child a{
+  color: white;
+  background-color: #E74F4D;
+  display: inline-block;
+  text-align: center;
+  line-height: 65px;
+  font-size: 30px;
+  width: 330px;
+  height: 65px;
+  position: relative;
+  margin-left: 10px;
+}
+section .nav{
+  font-size: 14px;
+  font-family:"黑体";
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+section .nav div:nth-of-type(1) span{
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background: #fff url(../images/ww-07-sprint.png) -1px -47px no-repeat;
+}
+section .nav div:nth-of-type(2) span{
+  display: inline-block;
+  width: 35px;
+  height: 40px;
+  background: #fff url(../images/ww-07-sprint.png) -4px -103px no-repeat;
+}
+section .nav div:nth-of-type(3) span{
+  display: inline-block;
+  width: 35px;
+  height: 40px;
+  background: #fff url(../images/ww-07-sprint.png) -2px -150px no-repeat;
+}
+section .nav div:nth-of-type(4) span{
+  display: inline-block;
+  width: 41px;
+  height: 40px;
+  background: #fff url(../images/ww-07-sprint.png) -2px -205px no-repeat;
+}
+section .nav{
+  box-sizing: border-box;
+  padding: 40px 40px 72px 40px;
+}
+section .nav div{
+  text-align: center;
+  width: 166px;
+  height: 140px;
+}
+section .nav div p{
+margin-top: 30px;
+}
+
+.know{
+  font-family:"黑体";
+  font-size: 54px;
+  height: 362px;
+  background-color: #ececeb;
+  position: relative;
+  text-align: center;
+}
+.know span{
+  display: inline-block;
+  position: absolute;
+  top: 90px;
+  width: 93px;
+  height: 89px;
+  background:  url(../images/ww-07-sprint.png) -57px 0 no-repeat;
+}
+.know p{
+  color:#323232;
+  opacity: 0.5;
+  padding-top: 230px;
+}
+.input{
+  text-align: center;
+  font-family:"微软雅黑";
+  position: relative;
+  height: 339px;
+  background-color: #E74F4D;
+}
+.input img{
+  display: block;
+  height: 339px;
+  width: 100%;
+  opacity: 0.8;
+  overflow: hidden;
+}
+.input p:nth-of-type(1){
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 115px);
+  top: 50px;
+  color: #fff;
+  font-size: 21px;
+}
+.input p:nth-of-type(2){
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 120px;
+  opacity: 0.8;
+  left: calc(50% - 170px);
+}
+.input>div:before{
+  overflow: hidden;
+  clear: both;
+}
+.input .input_in{
+
+  flex-direction:row;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  top: 190px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.input .input_in div{
+  background-color: #fff;
+  position: relative;
+  font-size: 12px;
+  width: 236px;
+  height: 36px;
+  margin-left: 30px;
+}
+.input .input_in div:nth-of-type(4){
+  font-size: 18px;
+  letter-spacing: 20px;
+  color: white;
+  line-height: 38px;
+  background-color: #be4e48;
+}
+.input .input_in div span{
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #A8A9AA;
+}
+.input .input_in div i{
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 20px;
+  font-size: 14px;
+  font-weight: 100;
+  top: 8px;
+  right: 10px;
+  font-family:"Arial";
+  background-color: #be4e48;
+}
+.input .input_in div a{
+  color: white;
+}
+.gallery{
+  font-size: 18px;
+  position: relative;
+  box-sizing: border-box;
+  height: 604px;
+  background-color: #f6f6f6;
+  padding: 100px 145px;
+}
+.gallery .beijing{
+  position: absolute;
+  left: 200px;
+  bottom: 135px;
+}
+.gallery .shanghai{
+  position: absolute;
+  left: 380px;
+  top: 80px;
+}
+.gallery .guangzhou{
+  position: absolute;
+  right: 520px;
+  bottom: 136px;
+}
+.gallery .shenzhen{
+  position: absolute;
+  right: 290px;
+  bottom: 140px;
+}
+.gallery div{
+  text-align: center;
+}
+
+.gallery div>p:nth-of-type(2){
+  color: #3f3f3f;
+  opacity: 0.6;
+  padding-top: 4px;
+  font-size: 15px;
+}
+.gallery .shanghai p:nth-of-type(1){
+  letter-spacing: 50px;
+  font-size: 25px;
+}

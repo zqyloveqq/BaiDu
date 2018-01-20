@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.main{
+  display: flex;
+  /*下面样式出现了scroll条*/
+  /*width: 100%;*/
+  margin: 20px;
+  padding: 20px;
+  overflow: hidden;
+  /*box-sizing: border-box;*/
+  background-color: #eee;
+  border: 1px solid #999;
+}
+.main div img{
+  width: 80px;
+  height: 80px;
+}
+.main .left{
+  border: 1px solid #000;
+  display: flex;
+  width: 280px;
+  height: 120px;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.main .left p{
+  margin-left: 10px;
+  display: inline-block;
+}
+.main .right{
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 20px;
+  width: 120px;
+  height: 420px;
+  background-color: #fff;
+}
+.main .right img{
+  margin-top: 20px;
+}
+.main .middle{
+  border: 1px solid #000;
+  margin: 0 20px;
+  background-color: #fff;
+  padding: 20px;
+}

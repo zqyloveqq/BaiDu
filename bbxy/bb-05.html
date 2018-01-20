@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务五：基础JavaScript练习（二）</title>
+  <style>
+    #main{
+      display: flex;
+      margin: 10px;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+    #main div{
+      background-color: #fb0101;
+      cursor: pointer;
+      color: white;
+      width: 20px;
+      box-sizing: border-box;
+      padding: 2px;
+      margin: 2px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var text = document.getElementById("text");
+      var main = document.getElementById('main');
+      var left_in = document.getElementById("left_in");
+      var right_in = document.getElementById("right_in");
+      var left_out = document.getElementById("left_out");
+      var right_out = document.getElementById("right_out");
+      var sort_num = document.getElementById("sort_num");
+//    检查输入的值是否是10~100之间
+      function check_num(a){
+        if(a.value>=10 && text.value<=100){
+          return Number(text.value);
+        }
+        else
+        return 0;
+      }
+//    检查main其下的div个数是否超过60个
+      function length_num(main){
+        if (main.children.length >59){
+          return true;
+        }
+        else
+        return false;
+      }
+
+//     向队列中插入一个值
+      function lr_in(a) {
+        if (check_num(text) == 0) {
+          alert("值不合法");
+          return false;
+        }
+        else if(length_num(main)){
+          alert("队列元素数量最多限制为60个,无法继续添加");
+          return false;
+        }
+
+        var div = document.createElement("div");
+        div.innerText = check_num(text);
+        div.style.height = check_num(text)*3 + "px";
+        if (a == "left_in") {
+          main.insertBefore(div, main.firstChild);
+        }
+        else if (a == "right_in") {
+          main.appendChild(div);
+        }
+      }
+//     从队列中取出一个值
+      function lr_out(a) {
+        if (a == "left_out" && main.childNodes.length > 0) {
+          alert(main.firstChild.innerText);
+          main.removeChild(main.firstChild);
+        }
+        else if (a == "right_out" && main.childNodes.length > 0) {
+          alert(main.lastChild.innerText);
+          main.removeChild(main.lastChild);
+        }
+        else {
+          alert("队列为空");
+        }
+      }
+//    排序
+      function sort_nums(main){
+        var arr = [];
+        for(let i=0;i<main.children.length;++i){
+          arr.push(parseInt(main.children[i].style.height));
+        }
+        arr.sort(function(a,b){
+          return a - b;
+        });
+        return arr;
+      }
+
+      function new_div(arr,main){
+        //当main下还存在子节点时 循环继续
+        while(main.hasChildNodes())
+        {
+          main.removeChild(main.firstChild);
+        }
+        for(let i=0;i<arr.length;++i){
+          let div = document.createElement("div");
+          div.innerHTML = arr[i]/3;
+          div.style.height = arr[i] +"px";
+          main.appendChild(div);
+        }
+      }
+
+      left_in.addEventListener("click", function () {
+        // 错在一直用的是left_in，没加引号
+        lr_in("left_in");
+      });
+      right_in.addEventListener("click", function () {
+        lr_in("right_in");
+      });
+      left_out.addEventListener("click", function () {
+        lr_out("left_out");
+      });
+      right_out.addEventListener("click", function () {
+        lr_out("right_out");
+      });
+
+//     事件委托
+      main.addEventListener("click", function (event) {
+//        不加toLocaleLowerCase()则显示的是大写的DIV
+        if(event.target.nodeName.toLocaleLowerCase() =="div"){
+//          alert("移出"+event.target.innerHTML);
+          main.removeChild(event.target);
+        }
+      });
+
+      sort_num.addEventListener("click", function () {
+        var new_arr = sort_nums(main);
+        new_div(new_arr,main);
+
+      });
+    }
+
+  </script>
+</head>
+<body>
+<label for="text"><input type="text" id="text"></label>
+<button id="left_in">左侧入</button>
+<button id="right_in">右侧入</button>
+<button id="left_out">左侧出</button>
+<button id="right_out">右侧出</button>
+<button id="sort_num">排序</button>
+<div id="main">
+
+</div>
+
+</body>
+</html>

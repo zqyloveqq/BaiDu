@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务二：表单（二）多个表单项的动态校验</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    form{
+      position: relative;
+      margin: 50px 30%;
+    }
+    form button{
+      border: none;
+      width: 80px;
+      background-color: #2f79b9;
+      border-radius: 4px;
+      padding: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    form input{
+      border: 1px solid #adadad;;
+      border-radius: 5px;
+      width: 500px;
+      height: 32px;
+    }
+    table tr td{
+      box-sizing: border-box;
+    }
+    table tr td:nth-of-type(2n+1){
+      display: inline-block;
+      width: 100px;
+      text-align: right;
+      margin: 10px;
+    }
+    table p,table tr:nth-of-type(2n){
+      display: none;
+      /*background-color: black;*/
+    }
+    button{
+      position: absolute;
+      bottom: -50px;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+<form action="">
+  <table>
+    <tr>
+      <td><label for="nick">名称</label></td>
+      <td><input type="text" id="nick"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><p id="a">必填，长度是4~16个字符</p></td>
+    </tr>
+    <tr>
+      <td><label for="psd">密码</label></td>
+      <td><input type="text" id="psd"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><p id="b">必填，长度是4~16个字符</p></td>
+    </tr>
+    <tr>
+      <td><label for="rpsd">密码确认</label></td>
+      <td><input type="text" id="rpsd"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td> <p id="c">必填，长度是4~16个字符</p></td>
+    </tr>
+    <tr>
+      <td><label for="mail">邮箱</label></td>
+      <td><input type="text" id="mail"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><p id="d">必填，长度是4~16个字符</p></td>
+    </tr>
+    <tr>
+      <td> <label for="phone">手机</label></td>
+      <td><input type="text" id="phone"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><p id="e">必填，长度是4~16个字符</p></td>
+    </tr>
+  </table>
+  <button id="btn">提交</button>
+</form>
+
+
+
+
+</body>
+</html>
